@@ -42,7 +42,7 @@ Create a new serial port object for the `path`. In the case of invalid arguments
  * @property {boolean} [xoff=false] flow control setting
  * @property {boolean} [xany=false] flow control setting
  * @property {object=} bindingOptions sets binding-specific options
- * @property {Binding=} Binding The hardware access binding. `Bindings` are how Node-Serialport talks to the underlying system. Will default to the static property `Serialport.Binding`.
+ * @property {Binding=} binding The hardware access binding. `Bindings` are how Node-Serialport talks to the underlying system. Will default to the static property `Serialport.Binding`.
  * @property {number} [bindingOptions.vmin=1] see [`man termios`](http://linux.die.net/man/3/termios) LinuxBinding and DarwinBinding
  * @property {number} [bindingOptions.vtime=0] see [`man termios`](http://linux.die.net/man/3/termios) LinuxBinding and DarwinBinding
  */
@@ -219,7 +219,7 @@ In addition to the usual `stream.write` arguments (`String` and `Buffer`), `writ
 
 Arguments:
 
-- `data: string|Buffer|Array<number>`
+- `data: string|Buffer|Array<number>` data Accepts a [`Buffer`](http://nodejs.org/api/buffer.html) object, or a type that is accepted by the `Buffer` constructor (e.g. an array of bytes or a string).
 - `encoding?: string` The encoding, if chunk is a string. Defaults to `'utf8'`. Also accepts `'ascii'`, `'base64'`, `'binary'`, and `'hex'` See [Buffers and Character Encodings](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) for all available options.
 - `callback?: error => {}` Called once the write operation finishes. Data may not yet be drained to the underlying port.
 
